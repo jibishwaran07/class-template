@@ -15,8 +15,8 @@
     "src/**/*.{cjs,tsx,md,json,css}": ["eslint", "prettier --write"]
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^0.0.0-experimental-670811593-20240322",
+    "react-dom": "^0.0.0-experimental-670811593-20240322"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",
