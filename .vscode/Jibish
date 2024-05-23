@@ -1,0 +1,94 @@
+DOCTYPE html>
+<html lang="en">
+    <center>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ID Card Generator</title>
+  <style>
+
+
+#idCard {
+  width: 300px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+/* Styles for the user's profile picture */
+#idCard img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Styles for user information */
+idCard p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+/* Style for the Next button */
+#nextButton {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hover effect for the Next button */
+#nextButton:hover {
+  background-color: #0056b3;
+}
+
+  </style>
+</head>
+<body>
+  <div id="idCard">
+    <div id="idCard">
+        <img src="c:\Users\Manojkumar\Downloads\WhatsApp Image 2024-05-21 at 21.02.56_bee96317.jpg" alt="c:\Users\Manojkumar\Downloads\download.jpeg">
+        <p><strong>name:</strong> Manojkumar</p>
+        <p><strong>Age:</strong> 18</p>
+        <p><strong>Location:</strong> DR MCET</p>
+        <!-- You can add more information here as needed -->
+      </div>
+      
+  </div>
+  <button id="nextButton">Next</button>
+
+  <script>
+    const idCard = document.getElementById('idCard');
+    const nextButton = document.getElementById('nextButton');
+
+    // Function to fetch user data from randomuser.me
+    async function fetchUserData() {
+      const response = await fetch('https://randomuser.me/api/');
+      const data = await response.json();
+      return data.results[0]; // Assuming only one user data is returned
+    }
+
+    // Function to update ID card with user data
+    function updateIDCard(userData) {
+      // Update the ID card content with user data
+      // Example: idCard.innerHTML = <img src="${userData.picture.large}" alt="User Picture"><p>Name: ${userData.name.first} ${userData.name.last}</p>...;
+    }
+
+    // Event listener for Next button click
+    nextButton.addEventListener('click', async () => {
+      const userData = await fetchUserData();
+      updateIDCard(userData);
+    });
+
+    // You can also implement infinite scroll functionality here
+    // Listen for scroll events and fetch more data when user reaches the bottom of the page
+  </script>
+  </center>
+</body>
+</html>
